@@ -1,0 +1,7 @@
+Command:
+python3 problem3.py
+
+Output:
+ways(3) = 4
+ways(5) = 13
+ways(10) = 274
