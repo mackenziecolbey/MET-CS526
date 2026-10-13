@@ -1,0 +1,19 @@
+Problem 2: unique substrings
+
+Command:
+Get-Content problem2_input.txt | python problem2.py
+
+Output:
+a
+ab
+abc
+abca
+abcab
+b
+bc
+bca
+bcab
+c
+ca
+cab
+12

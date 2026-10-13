@@ -1,0 +1,12 @@
+Problem 1: Palindrom test
+
+Command:
+Get-Content palindrome_input.txt | python Palindrome.py
+
+Output:
+False
+True
+True
+False
+False
+2

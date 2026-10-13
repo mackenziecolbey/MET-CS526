@@ -1,0 +1,45 @@
+Problem 4: ghostbusters stream intersections
+
+Test 1: intersecting streams
+Command:
+Get-Content problem4_input1.txt | python problem4.py
+Input:
+2
+B 0 0 G 5 5
+B 3 0 G 0 3
+Output:
+All Ghosts: were not elinimated
+
+Test 2: Non-intersecting streams
+Command:
+Get-Content problem4_input2.txt | python problem4.py
+Input:
+3
+B 0 0 G 2 2
+B 3 0 G 5 2
+B 0 4 G 1 5
+Output:
+All Ghosts: were eliminated
+
+Test 3: streams on the same line
+Command:
+Get-Content problem4_input3.txt | python problem4.py
+Input:
+2
+B 0 0 G 2 2
+B 5 5 G 7 7
+Output:
+All Ghosts: were not eliminated
+
+Test 4: parallel vertical streams
+Command:
+Get-Content problem4_input4.txt | python problem4.py
+Input:
+2
+B 1 0 G 1 6
+B 4 2 G 4 -3
+Output:
+All Ghosts: were eliminated
+
+
+
