@@ -1,0 +1,211 @@
+CS526 Mid-Term
+Boston University Metropolitan College
+
+--------------------------------------------------------------------------------
+General Instructions (apply to all problems)
+--------------------------------------------------------------------------------
+
+  • Your program may read its input file either from standard input
+    (e.g. python snowfall.py < snowfall_input1.txt) or from a file name given
+    on the command line (e.g. python snowfall.py snowfall_input1.txt). Your
+    readme.txt must show the exact command used to run each program.
+  • For each problem, provide a readme.txt that describes the heart of your
+    algorithm, explains your code, and explains how to run your code in a
+    terminal window.
+  • You may assume the input files are well formed (correct number of lines,
+    rows and values) unless a problem states otherwise.
+
+--------------------------------------------------------------------------------
+Problem 1 (35 pts) - Snowfall
+--------------------------------------------------------------------------------
+
+You are given an array A[1…n] which contains the cumulative snowfall totals for
+n consecutive days, so A[i] is the total snowfall from day 1 through day i.
+For example, if there are 6 inches of snow on day 1, 7 inches of snow on
+day 2, 0 inches of snow on day 3 and 4 inches of snow on day 4, the array
+would contain the values [6,13,13,17].
+
+The input file contains 2 lines: the first line is the number of days n and
+the second line is the space separated list of the n cumulative snowfall
+totals.
+
+Design and implement an algorithm that determines if there exist three
+consecutive days whose combined snowfall is strictly more than half of the
+total snowfall across all n days (the total is A[n]).
+
+Notes:
+  • Any three consecutive days may be used, including days 1, 2 and 3. The
+    snowfall on days i, i+1 and i+2 is A[i+2] - A[i-1], where A[0] = 0.
+  • "More than half" is strict: if the three days produce exactly half of the
+    total, the answer for that window is NO.
+  • If n is less than 3, the answer is NO.
+
+Your solution should return either YES or NO.
+
+You should demonstrate your code by running it on each of the four sample
+inputs below. You may run all of the inputs in a single execution of your code
+or individually. For each input, your output should be the input values you
+are testing followed by your solution, in the form:
+
+    <input> solution: <YES|NO>
+
+  • Describe the heart of your algorithm
+  • Write a program that takes as input a file and prints to the console
+    "<input> solution: <YES|NO>"
+  • Provide a readme.txt which explains how to run your code in a terminal
+    window.
+
+Note: there are four sample inputs (snowfall_input1.txt - snowfall_input4.txt):
+
+8
+1 4 10 14 15 17 17 23
+
+16
+44 127 166 231 238 320 363 429 500 511 577 642 689 764 812 886
+
+9
+3 8 14 19 21 24 25 25 32
+
+5
+1 2 3 4 5
+
+Results:
+
+1 4 10 14 15 17 17 23 solution: YES
+44 127 166 231 238 320 363 429 500 511 577 642 689 764 812 886 solution: NO
+3 8 14 19 21 24 25 25 32 solution: NO
+1 2 3 4 5 solution: YES
+
+--------------------------------------------------------------------------------
+Problem 2 (35 pts) - Pandemic
+--------------------------------------------------------------------------------
+
+You are in a square state whose counties are arranged into an NxN grid. Your
+code must work for any N; the sample inputs use N = 5 (25 counties). Two
+counties are neighbors if they are horizontally or vertically next to each
+other (diagonal counties are not neighbors).
+
+e.g.
+
+  . . . . .
+  . A B . .
+  . . C . .
+  . . . . .
+  . . . . .
+
+A and B are neighbors. B and C are neighbors. A and C are not neighbors.
+
+Some of the counties are infected by a mysterious virus which is highly
+contagious. Once a county is infected it stays infected. Each day, every
+healthy county that has at least two infected neighbors becomes infected.
+All counties are updated at the same time: a county infected today does not
+count as an infected neighbor until the next day.
+
+For example, let's start with the following configuration of infected
+counties (marked X). Day 1 is the initial state:
+
+Day 1               Day 2               Day 3
+  . . . . .           . . . . .           . . . . .
+  . . . X .           . . X X .           . . X X .
+  . . X . .           . . X X .           . . X X X
+  . . . . X           . . . . X           . . . X X
+  . . . . .           . . . . .           . . . . .
+
+Day 4               Day 5 – no new counties are infected, so the
+  . . . . .                 infection has stopped spreading
+  . . X X X           . . X X X
+  . . X X X           . . X X X
+  . . X X X           . . X X X
+  . . . . .           . . . . .
+
+Write an algorithm that simulates the infection until it stops spreading and
+then determines whether there are any healthy counties left in the state.
+
+You will be given 2 input files which have the form:
+  Line 1: N, the size of the matrix
+  Each following line: the row and column of one initially infected county,
+  separated by a space
+
+Rows and columns are numbered starting at 0, with row 0 at the top and
+column 0 at the left.
+
+e.g.
+5
+1 3
+2 2
+3 4
+
+This input means that the matrix is 5x5 and the counties at (row 1, column 3),
+(row 2, column 2) and (row 3, column 4) are initially infected. This is the
+Day 1 configuration shown above.
+
+  • Describe the heart of your algorithm
+  • Write a program that takes as input a file and prints to the console
+    either "There are healthy counties left" or
+    "There are no healthy counties left"
+  • You may also print the state of the board for each day, but the final
+    line of output must be one of the two messages above.
+  • Provide a readme.txt which explains how to run your code in a terminal
+    window.
+
+Note: there are two sample inputs:
+    pandemic_input1.txt -> There are healthy counties left
+    pandemic_input2.txt -> There are no healthy counties left
+
+
+--------------------------------------------------------------------------------
+Problem 3 (30 pts) - Symbol Puzzle Game
+--------------------------------------------------------------------------------
+
+You are given an nxn puzzle board where the square root of n is an integer,
+e.g. 4x4 or 9x9. The board is populated with symbols, where the number of
+distinct symbols is equal to n.
+
+Example: A partially filled 4x4 puzzle board using the symbols @ # & * with
+a . representing an empty cell:
+
+  @ . . .
+  . * . #
+  # . * &
+  * & . @
+
+Create and code an algorithm to calculate if the current board is in a valid
+or invalid state. The board is valid if all of the following conditions are
+met:
+
+  • Each row contains each symbol at most once
+  • Each column contains each symbol at most once
+  • The board is divided into n non-overlapping sub-boards, each of size
+    √n x √n (for a 4x4 board, four 2x2 sub-boards; for a 9x9 board, nine
+    3x3 sub-boards), starting from the top-left corner. Each sub-board
+    contains each symbol at most once.
+  • Every non-empty cell contains one of the n listed symbols. A cell holding
+    any other symbol makes the board invalid.
+
+Empty cells (.) are allowed anywhere and never cause the board to be invalid.
+
+You will be provided 2 input files with the following structure:
+  Line 1: n
+  Line 2: the n symbols, separated by commas (the commas are separators and
+          are not symbols)
+  Lines 3 to n+2: the n rows of the board, each containing n comma separated
+          values, where each value is a symbol or a . for an empty cell
+
+e.g. (this is the example board above, which is valid)
+
+4
+@,*,&,#
+@,.,.,.
+.,*,.,#
+#,.,*,&
+*,&,.,@
+
+  • Describe the heart of your algorithm
+  • Write a program that takes as input a file and prints to the console
+    either "The board is valid" or "The board is invalid"
+  • Provide a readme.txt which explains how to run your code in a terminal
+    window.
+
+Note: there are two sample inputs:
+    puzzle_game_input1.txt -> The board is valid
+    puzzle_game_input2.txt -> The board is invalid
