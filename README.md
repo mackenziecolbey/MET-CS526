@@ -35,7 +35,40 @@ vowel_input3.txt: 0 combinations
 vowel_input4.txt: 193050000 combinations
 
 
-Problem 3
+Problem 3: 
+
+Algorithm:
+
+How to Run: I ran the commands below in the terminal from my HW5 folder. All results matches the expected outputs in the assignment.
+
+Commands:
+
+python longest_sequence.py longest_seq1.txt
+
+python longest_sequence.py longest_seq2.txt
+
+python longest_sequence.py longest_seq3.txt
+
+python longest_sequence.py longest_seq4.txt
+
+python longest_sequence.py longest_seq5.txt
+
+python longest_sequence.py longest_seq6.txt
+
+Results: the results were as follows
+
+longest_seq1.txt: 4
+
+longest_seq2.txt: 7
+
+longest_seq3.txt: 10
+
+longest_seq4.txt: 39
+
+longest_seq5.txt: 192
+
+longest_seq6.txt: 1
+
 
 
  
