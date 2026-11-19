@@ -37,7 +37,7 @@ vowel_input4.txt: 193050000 combinations
 
 Problem 3: 
 
-Algorithm:
+Algorithm: The program uses dynamic programming to find the longest increasing sequence that alternates between the arrays A and B. It reads the input file and creates two DP lists, dp_a and dp_b, to store the longest sequence ending at each position in each array. Each position starts at 1 because a single number is a valid sequence. The program compares values from both arrays and extends a sequence when the next value is larger and comes from a later position. This keeps the values increasing, alternating, and in their original order. Then, it finds the largest value in the two DP lists and prints the length of the longest sequence.
 
 How to Run: I ran the commands below in the terminal from my HW5 folder. All results matches the expected outputs in the assignment.
 
