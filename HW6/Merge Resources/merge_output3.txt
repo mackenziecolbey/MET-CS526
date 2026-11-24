@@ -1,3 +1,0 @@
-Registers: 3
-Total sales: 0
-Merged log: []
