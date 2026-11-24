@@ -45,4 +45,16 @@ python p1insertion_sort.py Inputs/p1_large.txt
 Testing: I tested all three sorting algorithms using the same three input files containing 15, 50, and 500 integers. Each program prints the original values followed by the sorted values. I checked that the numbers were in increasing order and that negative numbers and repeated values were still included. All three algorithms successfully sorted all three input files. They also produced the same sorted results for each dataset.
 
 
+Problem 2:
+
+For this problem, I implemented LSD (Least Significant) Radix Sort using base 10. The program sorts non-negative integers by looking at one digit at a time, starting with the ones digit and moving to the tens, hundreds, etc. I used Counting Sort for each digit pass. The program first reads the integers from the input file and stores them in a list. It then finds the largest number, so it knows how many digit passes are needed. The variable exp determines which digit it being sorted. It starts at 1 for the ones digit, then becomes 10 for the tens digit, 100 for the hundreds digit, and continues until all digits in the largest number have been processed. For each pass, the counting_sort function looks at the current digit of every number. It counts how many times each digit from 0 to 9 appears. Then, it adds the counts together to determine the position where the numbers should go in the output list. The function goes through the original list backwards when placing numbers in the output list. This keeps numbers with the same current digit in their original order, making the Counting Sort pass stable. Stability is important because Radix Sort processes the digits separately. When the next digit is sorted, the order established by the previous digit pass needs to be preserved for numbers with the same current digit. Without a stable sort, the earlier digit order can be lost, and the final numbers might not be sorted correctly. After each pass, the sorted list is used for the next digit. When the largest number has no more digits to process, the program prints the sorted list. The program also prints the original values before sorting so they can be compared with the sorted results. I used base 10, so each pass sorts based on one of the two possible digits (0 through 9). The program was tested with input files containing 15, 50, and 5000 non-negative integers. The files included repeated values and numbers with different numbers of digits. 
+
+Running the program: I ran these commands in the python terminal:
+
+python radix_sort.py inputs/p2_small.txt
+
+python radix_sort.py inputs/p2_medium.txt
+
+python radix_sort.py inputs/p2_large.txt
+
 
