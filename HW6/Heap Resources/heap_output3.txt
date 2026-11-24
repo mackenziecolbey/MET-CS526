@@ -1,4 +1,0 @@
-Input values: [42]
-
-After insert(42):
-  42
